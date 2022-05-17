@@ -2,7 +2,7 @@
 
 -- sobre l'exemple d'una prova curta exer 11 La cultura del vi
 -- crearem la BD corresponent a les entitats VARIETAT, VI i la 
--- interrelació CUPATGE
+-- interrelaciÃ³ CUPATGE
 
 -- exemple actualitzat per a obligar a treballar amb taules INNODB
 
@@ -30,7 +30,7 @@ create table laboratoris (
 create table zones_biocontencio (
   codi int(20),
   codiLab int(20),
-  nivell varchar(10),
+  nivell varchar(10) check(nivell = A or nivell= B or nivell= c),
   responsable varchar(10),
   constraint pk_zones_biocontencio primary key (codi, codiLab),
   constraint fk_zones_biocontencio foreign key (codiLab) references laboratoris(codi),
