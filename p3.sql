@@ -30,7 +30,7 @@ create table laboratoris (
 create table zones_biocontencio (
   codi int(20),
   codiLab int(20),
-  nivell varchar(10) check(nivell = A or nivell= B or nivell= c),
+  nivell varchar(10) check(nivell = A or nivell= M or nivell= B),
   responsable varchar(10),
   constraint pk_zones_biocontencio primary key (codi, codiLab),
   constraint fk_zones_biocontencio foreign key (codiLab) references laboratoris(codi),
