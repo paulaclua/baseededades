@@ -14,7 +14,7 @@ use p3;
 create table paisos (
   nom varchar(20),
   pot_desenv varchar(10),
-  tractat_signat varchar(10),
+  tractat_signat varchar(10) check( tractat_signat = 'S' OR tractat_signat = 'N' OR tractat_signat = 'desconegut'),
   constraint pk_paisos primary key (nom)
 ) engine=innodb;
 
@@ -30,7 +30,7 @@ create table laboratoris (
 create table zones_biocontencio (
   codi int(20),
   codiLab int(20),
-  nivell varchar(10) check(nivell = A or nivell= M or nivell= B),
+  nivell varchar(10) check(nivell = 'A' or nivell= 'M' or nivell= 'B'),
   responsable varchar(10),
   constraint pk_zones_biocontencio primary key (codi, codiLab),
   constraint fk_zones_biocontencio foreign key (codiLab) references laboratoris(codi),
