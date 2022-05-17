@@ -18,6 +18,12 @@ create table paisos (
   constraint pk_paisos primary key (nom)
 ) engine=innodb;
 
+
+insert into paisos(nom, pot_desenv, tractat_signat) values ('Espanya', 'SI', 'S');
+insert into paisos(nom, pot_desenv, tractat_signat)
+insert into paisos(nom, pot_desenv, tractat_signat)
+insert into paisos(nom, pot_desenv, tractat_signat)
+
 create table laboratoris (
   codi int(15),
   nom varchar(20),
@@ -83,4 +89,3 @@ create table assignacions (
   constraint fk_ordinaris foreign key (empl_ord) references ordinaris(num_pass),
   constraint fk_ordinaris1 foreign key (zona,lab) references zones_biocontencio(codi, codiLab)
 ) engine=innodb;
-
